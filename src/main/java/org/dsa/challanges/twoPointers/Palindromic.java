@@ -28,7 +28,7 @@ public class Palindromic {
             left++;
             right--;
         }
-        
+
         return true;
     }
 }
