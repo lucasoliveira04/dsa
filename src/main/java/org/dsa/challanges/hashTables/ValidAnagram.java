@@ -34,7 +34,7 @@ public class ValidAnagram {
 
         for (Map.Entry<Character,Integer> entry : mapS1.entrySet()) {
             if (!entry.getValue().equals(mapS2.get(entry.getKey()))) {
-                return false;
+                System.out.println("Not is anagram");
             }
         }
 
