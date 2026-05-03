@@ -1,7 +1,6 @@
-package org.dsa.challanges.hashTables;
+package org.dsa.challanges.twoPointers;
 
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Set;
 
 public class IntersectionOfTwoLinkedList {
