@@ -28,20 +28,39 @@ public class LinkedListCycle {
         return false;
     }
 
-        public static void main(String[] args) {
-            LinkedListCycle solution = new LinkedListCycle();
+    public ListNode detectBeginCycle(ListNode head) {
+        ListNode left = head;
+        Set<ListNode> set = new HashSet<>();
 
-            ListNode n1 = new ListNode(3);
-            ListNode n2 = new ListNode(2);
-            ListNode n3 = new ListNode(0);
-            ListNode n4 = new ListNode(-4);
-
-            n1.next = n2;
-            n2.next = n3;
-            n3.next = n4;
-
-            System.out.println(solution.detectCycle(n1));
+        while (left != null) {
+            if (set.contains(left)) {
+                return left;
+            }
+            set.add(left);
+            left = left.next;
         }
+
+        return null;
+    }
+
+
+    public static void main(String[] args) {
+        LinkedListCycle solution = new LinkedListCycle();
+        ListNode n1 = new ListNode(3);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(0);
+        ListNode n4 = new ListNode(-4);
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+
+        n4.next = n1;
+
+        int nodeInt = solution.detectBeginCycle(n1).val;
+
+        System.out.println(solution.detectCycle(n1));
+        System.out.println(nodeInt);
+    }
 
 
 }
