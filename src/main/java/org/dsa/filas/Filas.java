@@ -1,6 +1,8 @@
 package org.dsa.filas;
 
 import java.util.EmptyStackException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Filas {
     int[] data;
@@ -40,6 +42,18 @@ public class Filas {
         return data[head++];
     }
 
+    int peek() {
+        if (isEmpty()) throw new EmptyStackException();
+        return data[head];
+    }
+
+    boolean contains(int value) {
+        for  (int i = head; i != tail; i = (i + 1) % MAX_SIZE) {
+            if (data[i] == value) return true;
+        }
+        return false;
+    }
+
     void clear() {
         head = 0;
         tail = 0;
@@ -58,5 +72,6 @@ public class Filas {
         filas.push(2);
 
         filas.print();
+        System.out.println(filas.contains(2));
     }
 }
