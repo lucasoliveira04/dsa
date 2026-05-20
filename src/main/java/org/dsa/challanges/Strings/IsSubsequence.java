@@ -1,5 +1,7 @@
 package org.dsa.challanges.Strings;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class IsSubsequence {
     public static void main(String[] args) {
         String s1 = "abc";
@@ -14,16 +16,15 @@ public class IsSubsequence {
 
     public static boolean isSubsequence(String s, String t) {
 
-        int i = 0;
-        int j = 0;
+        AtomicInteger i = new  AtomicInteger(0);
 
-        while (i < s.length() && j < t.length()) {
-            if (s.charAt(i) == t.charAt(j)) {
-                i++;
+        t.chars().forEach(j -> {
+            if (i.get() < s.length() && j == s.charAt(i.get())) {
+                i.incrementAndGet();
             }
-            j++;
-        }
+        });
 
-        return i == s.length();
+        return i.get() == s.length();
+
     }
 }
