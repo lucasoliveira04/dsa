@@ -3,12 +3,26 @@ package org.dsa.patterns;
 import java.util.HashMap;
 import java.util.Map;
 
-/*
- * Sliding Window - Janela Deslizante
+/**
+ * Sliding Window (Janela Deslizante).
  *
- * Usado para resolver problemas com subarrays ou substrings.
- * A janela se move para a direita, aumentando ou diminuindo
- * conforme a regra do problema.
+ * <p>
+ * Referência:
+ * <a href="https://leetcode.com/discuss/post/8417693/stop-grinding-random-leetcode-problems-d-28vi/">
+ * LeetCode Discuss
+ * </a>
+ * </p>
+ *
+ * <p>
+ * Padrão usado para resolver problemas que envolvem subarrays ou substrings.
+ * Em vez de analisar todos os intervalos possíveis, mantemos uma “janela”
+ * que percorre a estrutura da esquerda para a direita.
+ * </p>
+ *
+ * <p>
+ * A janela pode ter tamanho fixo ou variável, aumentando e diminuindo
+ * conforme as condições definidas pelo problema.
+ * </p>
  */
 public class SlidingWindow {
     public static void main(String[] args) {
