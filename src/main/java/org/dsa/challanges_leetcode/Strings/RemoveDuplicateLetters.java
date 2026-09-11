@@ -1,4 +1,9 @@
-class Solution {
+package org.dsa.challanges_leetcode.Strings;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class RemoveDuplicateLetters {
     public String removeDuplicateLetters(String s) {
         Set<Character> set = new HashSet<>();
         int[] freq = new int[26];
